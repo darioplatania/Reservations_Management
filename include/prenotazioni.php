@@ -21,15 +21,24 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <style type="text/css">
-    table {
-    border-collapse:collapse;
+<style>
+table, td, th {
+    border: 1px solid #ddd;
     text-align: center;
-    }
-    td {border: 1px solid maroon;
-      padding:15px
-      }
-    </style>
+    background-color: green;
+}
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+}
+
+th, td {
+    padding: 15px;
+    color: white;
+
+}
+</style>
 
 </head>
 
@@ -55,6 +64,7 @@
           <!-- /#sidebar-wrapper -->
 
           <!-- Page Content -->
+
           <div id="page-content-wrapper">
               <div class="container-fluid">
                   <div class="row">
@@ -66,7 +76,7 @@
                         document.write('<tr>')
                         var cell = new Array();
                           for (j=0; j<5; j++) {
-                          document.write('<td>');                        
+                          document.write('<td>');
                           document.write(String.fromCharCode(j+65)+ (i+1));
                           document.write('</td>');
                           }
@@ -75,7 +85,6 @@
                         document.write('</table>');
                         document.close();
                         </script>
-
                       </div>
                   </div>
               </div>
