@@ -21,24 +21,6 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-<style>
-table, td, th {
-    border: 1px solid #ddd;
-    text-align: center;
-    background-color: green;
-}
-
-table {
-    border-collapse: collapse;
-    width: 50%;
-}
-
-th, td {
-    padding: 15px;
-    color: white;
-
-}
-</style>
 
 </head>
 
@@ -68,22 +50,29 @@ th, td {
           <div id="page-content-wrapper">
               <div class="container-fluid">
                   <div class="row">
-                      <div class="col-lg-12">
+                      <div class="col-md-6" >
+                        <h1 style="text-align:left">La nostra Sala</h1>
+                        <p style="text-align:left">Prenota ora i tuoi posti a sedere!</p>
+                        <br><br>
 
-                        <script type="text/javascript">
-                        document.write('<table>');
-                        for (i=0; i<10; i++) {
-                        document.write('<tr>')
-                        var cell = new Array();
-                          for (j=0; j<5; j++) {
-                          document.write('<td>');
-                          document.write(String.fromCharCode(j+65)+ (i+1));
-                          document.write('</td>');
+                        <table id="tb" class="table table-bordered" style="background-color: #80FF80"></table>
+                          <script type="text/javascript">
+                          for (var j = 0; j < 10; j++) {
+                            var table = document.getElementById("tb");
+                            var row = table.insertRow(j);
+                            var cell = new Array();
+                            for (var i = 0; i < 5; i++) {
+                                    cell[i] = row.insertCell(i);
+                            cell[i].innerHTML = String.fromCharCode(j+65) + (i+1);
+                            cell[i].onclick=function(){
+                              if (this.hasAttribute("style", "background-color: #FFFF80;")){
+                              this.setAttribute("style", "background-color: #80FF80;");
+                            } else {
+                              this.setAttribute("style", "background-color: #FFFF80;");
+                            }
+                            };
                           }
-                        document.write('</tr>');
                         }
-                        document.write('</table>');
-                        document.close();
                         </script>
                       </div>
                   </div>
