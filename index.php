@@ -70,13 +70,28 @@ if($_SESSION['email'])
                       <div class="col-md-12 col-md-offset-0">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                     <h3 class="panel-title">Prenotazioni</h3>
-                                </div>                                
-                                <div class="panel-body">Posti Prenotati:</div>
-                                <div class="panel-body">Posti Liberi:</div>
+                                     <h3 class="panel-title">Posti Totali: <b>50</b></h3>
+                                </div>
+                                <table class="table">
+                                <thead>
+                                  <tr>
+                                    <th>Occupati</th>
+                                    <th>Liberi</th>
+                                    <th>Selezionati</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>..</td>
+                                    <td>..</td>
+                                    <td><b id= "prenotati"></b></td>
+                                  </tr>
+                                </tbody>
+                               </table>
                             </div>
                         </div>
                     </div><!-- End of Row Panel-->
+                    <br>
                     <table id="tb" class="table table-bordered" style="background-color: #80FF80"></table>
                       <script type="text/javascript">
                       for (var j = 0; j < 10; j++) {
@@ -88,14 +103,20 @@ if($_SESSION['email'])
                         cell[i].innerHTML = String.fromCharCode(j+65) + (i+1);
                         cell[i].id = (j+1).toString() + (i+1).toString();
                         cell[i].style.backgroundColor = "lightgreen";
+                        var count = 0;
                         cell[i].onclick=function(){
                           var pos = this.id;
-                          alert(pos);
+                          //alert(pos);
                           if (this.style.backgroundColor == "lightgreen"){
                               this.style.backgroundColor = "khaki ";
+                              count = count +1;
+                              document.getElementById("prenotati").innerHTML = count;
+
                           }
                           else {
                             this.style.backgroundColor = "lightgreen";
+                            count = count -1;
+                            document.getElementById("prenotati").innerHTML = count;
                           }
                         };
                       }
