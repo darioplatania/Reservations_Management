@@ -62,14 +62,16 @@
                             var row = table.insertRow(j);
                             var cell = new Array();
                             for (var i = 0; i < 5; i++) {
-                                    cell[i] = row.insertCell(i);
+                            cell[i] = row.insertCell(i);
                             cell[i].innerHTML = String.fromCharCode(j+65) + (i+1);
+                            cell[i].style.backgroundColor = "lightgreen";
                             cell[i].onclick=function(){
-                              if (this.hasAttribute("style", "background-color: #FFFF80;")){
-                              this.setAttribute("style", "background-color: #80FF80;");
-                            } else {
-                              this.setAttribute("style", "background-color: #FFFF80;");
-                            }
+                              if (this.style.backgroundColor == "lightgreen"){
+                                  this.style.backgroundColor = "khaki ";
+                              }
+                              else {
+                                this.style.backgroundColor = "lightgreen";
+                              }
                             };
                           }
                         }
@@ -84,10 +86,10 @@
       <!-- /#wrapper -->
 
       <!-- jQuery -->
-      <script src="js/jquery.js"></script>
+      <script src="../js/jquery.js"></script>
 
       <!-- Bootstrap Core JavaScript -->
-      <script src="js/bootstrap.min.js"></script>
+      <script src="../js/bootstrap.min.js"></script>
 
       <!-- Menu Toggle Script -->
       <script>
