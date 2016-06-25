@@ -49,11 +49,11 @@
 
           <div id="page-content-wrapper">
               <div class="container-fluid">
+                <h1 style="text-align:center">La nostra Sala</h1>
+                <p style="text-align:center">Prenota ora i tuoi posti a sedere!</p>
                   <div class="row">
-                      <div class="col-md-6" >
-                        <h1 style="text-align:left">La nostra Sala</h1>
-                        <p style="text-align:left">Prenota ora i tuoi posti a sedere!</p>
-                        <br><br>
+                      <div class="col-md-6 col-md-offset-0">
+                        <br>
 
                         <table id="tb" class="table table-bordered" style="background-color: #80FF80"></table>
                           <script type="text/javascript">
@@ -64,8 +64,11 @@
                             for (var i = 0; i < 5; i++) {
                             cell[i] = row.insertCell(i);
                             cell[i].innerHTML = String.fromCharCode(j+65) + (i+1);
+                            cell[i].id = (j+1).toString() + (i+1).toString();
                             cell[i].style.backgroundColor = "lightgreen";
                             cell[i].onclick=function(){
+                              var pos = this.id;
+                              alert(pos);
                               if (this.style.backgroundColor == "lightgreen"){
                                   this.style.backgroundColor = "khaki ";
                               }
@@ -76,12 +79,23 @@
                           }
                         }
                         </script>
+                        <div class="row">
+                          <div class="col-md-12 col-md-offset-0">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                         <h3 class="panel-title">Prenotazioni</h3>
+                                    </div>
+                                    <div class="panel-body">Posti Prenotati:</div>
+                                    <div class="panel-body">Posti Liberi:</div>
+                                    <div class="panel-body">Posti Utente:</div>
+                                </div>
+                            </div>
+                        </div><!-- End of Row -->
                       </div>
                   </div>
               </div>
           </div>
           <!-- /#page-content-wrapper -->
-
       </div>
       <!-- /#wrapper -->
 
