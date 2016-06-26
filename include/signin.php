@@ -22,7 +22,7 @@
   <!-- Jquery -->
   <link href="../js/jquery.js" rel="stylesheet">
 
-  <title>Print3d</title>
+  <title>Theater Show Management</title>
 </head>
 <body>
   <div class="container">
@@ -41,7 +41,7 @@
               <hr>
               <div class="row">
                 <div class="col-xs-8">
-                  <a href="#" class="active" id="login-form-link">Accedi</a>
+                  <p class="active" id="login-form-link">Accedi</p>
                 </div>
               </div>
               <?php echo "<p class='text-danger'>$expiration</p>";?>

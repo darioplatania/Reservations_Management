@@ -107,7 +107,7 @@ function test_input($data) {
   <!-- Latest compiled JavaScript -->
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-  <title>Print3d</title>
+  <title>Theater Show Management</title>
 </head>
 <body>
   <div class="container">
@@ -126,7 +126,7 @@ function test_input($data) {
               <hr>
               <div class="row">
                 <div class="col-xs-8">
-                  <a href="#" class="active" id="login-form-link">Registrati</a>
+                  <p class="active" id="login-form-link">Registrati</p>
                 </div>
               </div>
             </div>

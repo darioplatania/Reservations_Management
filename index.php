@@ -48,7 +48,7 @@ if($_SESSION['email'])
                   </a>
               </li>
               <li>
-                  <a href="include/signup.php">Registazione</a>
+                  <a href="include/signup.php">Registrazione</a>
               </li>
               <li>
                   <a href="include/signin.php">Accedi</a>
@@ -84,7 +84,11 @@ if($_SESSION['email'])
                                   <tr>
                                     <td>..</td>
                                     <td>..</td>
-                                    <td><b id= "prenotati"></b></td>
+                                    <td>
+                                      <b id= "prenotati"></b>
+                                      <br>
+                                      <a href="include/prenota.php" id="bottone" class="btn btn-info btn-sm" role="button">Prenota</a>
+                                    </td>
                                   </tr>
                                 </tbody>
                                </table>
@@ -103,6 +107,7 @@ if($_SESSION['email'])
                         cell[i].innerHTML = String.fromCharCode(j+65) + (i+1);
                         cell[i].id = (j+1).toString() + (i+1).toString();
                         cell[i].style.backgroundColor = "lightgreen";
+                        document.getElementById("bottone").style.display = "none";
                         var count = 0;
                         cell[i].onclick=function(){
                           var pos = this.id;
@@ -111,12 +116,17 @@ if($_SESSION['email'])
                               this.style.backgroundColor = "khaki ";
                               count = count +1;
                               document.getElementById("prenotati").innerHTML = count;
-
+                              if(count != 0){
+                              document.getElementById("bottone").style.display = "block";
+                            }
                           }
                           else {
                             this.style.backgroundColor = "lightgreen";
                             count = count -1;
                             document.getElementById("prenotati").innerHTML = count;
+                            if(count == 0){
+                            document.getElementById("bottone").style.display = "none";
+                            }
                           }
                         };
                       }
