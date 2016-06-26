@@ -104,6 +104,7 @@
          echo "<p align='center' class='text-danger'>$error</p>";
       }
    }
+   mysqli_close($db);
 
    //if(isset($_GET['Message'])){
     //$expiration = $_GET['Message'];
