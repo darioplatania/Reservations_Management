@@ -27,6 +27,9 @@ if(!isset($_SESSION['email']))
   <!-- Custom CSS -->
   <link href="../css/simple-sidebar.css" rel="stylesheet">
 
+  <!-- Logout.js -->
+  <script src="../js/logout.js"></script>
+
 </head>
 
 <body>
@@ -45,7 +48,7 @@ if(!isset($_SESSION['email']))
             </li>
             </li>
             <li>
-                <a href="logout.php">Sign Out</a>
+                <a href="logout.php" onclick="return deleteask();">Sign Out</a>                
             </li>
         </ul>
     </div>

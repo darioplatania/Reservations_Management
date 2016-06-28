@@ -85,7 +85,9 @@ if(isset($_SESSION['email']))
                 <tbody>
                   <tr>
                     <td>..</td>
-                    <td>..</td>
+                    <td>
+                      <b id='free'></b>
+                    </td>
                     <td>
                       <b id="selezionati"></b>
                     </td>
