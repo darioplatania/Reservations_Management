@@ -85,7 +85,7 @@ if(!$_SESSION['email'])
               </div>
             </div><!-- End of Row Panel-->
             <table id="tb" class="table table-bordered" style="background-color: #80FF80"></table>
-              <script src="js/table_welcome.js"></script>
+              <script src="../js/table_welcome.js"></script>
           </div>
         </div>
       </div>
@@ -95,10 +95,10 @@ if(!$_SESSION['email'])
 <!-- /#wrapper -->
 
 <!-- jQuery -->
-<script src="js/jquery.js"></script>
+<script src="../js/jquery.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 
 <!-- Menu Toggle Script -->
 <script>

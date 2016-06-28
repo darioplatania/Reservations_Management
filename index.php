@@ -60,7 +60,7 @@ if($_SESSION['email'])
         <div class="col-md-6 col-md-offset-0">
           <br>
           <strong id="errore" name="redirect" class="alert alert-danger">
-             Occore essere registrati!<br>Verrai reindirizzato tra 10 secondi!
+             Occore essere registrati!<br>Verrai reindirizzato a breve!
              <!--
              <form name="redirect">
              Verrai reindirizzato tra <input type="text" size="2" name="counter">secondi

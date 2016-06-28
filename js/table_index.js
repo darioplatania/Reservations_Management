@@ -37,4 +37,8 @@ for (var j = 0; j < 10; j++) {
 str = document.getElementById("bottone");
 str.onclick=function(){
 document.getElementById("errore").style.display = "block";
+
+// Imposto il sito di destinazione
+var destinazione = "include/signup.php";
+window.location = destinazione;
 }
