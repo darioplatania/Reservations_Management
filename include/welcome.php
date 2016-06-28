@@ -1,5 +1,5 @@
 <?php
-include('prenota.php');
+include('conteggio.php');
 
 session_start();
 $email = $_SESSION['email'];

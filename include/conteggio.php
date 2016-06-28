@@ -1,5 +1,4 @@
 <?php
-
 include('config.php');
 
 $sql = "SELECT * FROM prenotazioni";
@@ -8,6 +7,5 @@ $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 $active = $row['active'];
 
 $count = mysqli_num_rows($result);
-
 $free = 50 - $count;
 ?>
