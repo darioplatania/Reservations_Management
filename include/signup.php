@@ -17,9 +17,7 @@ $email = $password = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $valid = true;
-
-
-
+  
   /*controllo email*/
   if (empty($_POST["email"])) {
     $emailErr = "Inserirsci l'Email";
