@@ -1,5 +1,8 @@
 <?php
+include('include/prenota.php');
+
 session_start();
+
 $email = $_SESSION['email'];
 
 if(isset($_SESSION['email']))
@@ -84,13 +87,9 @@ if(isset($_SESSION['email']))
                 </thead>
                 <tbody>
                   <tr>
-                    <td>..</td>
-                    <td>
-                      <b id='free'></b>
-                    </td>
-                    <td>
-                      <b id="selezionati"></b>
-                    </td>
+                    <td><b><?php echo $count;?><b></td>
+                    <td><b><?php echo $free;?><b></td>
+                    <td><b id="selezionati"></b></td>
                   </tr>
                 </tbody>
                </table>

@@ -1,4 +1,3 @@
-var posti_free = 50;
 for (var j = 0; j < 10; j++) {
   var table = document.getElementById("tb");
   var row = table.insertRow(j);
@@ -18,9 +17,7 @@ for (var j = 0; j < 10; j++) {
     if (this.style.backgroundColor == "lightgreen"){
         this.style.backgroundColor = "khaki ";
         count = count +1;
-        posti_free = posti_free - 1;
         document.getElementById("selezionati").innerHTML = count;
-        document.getElementById("free").innerHTML = posti_free;
 
         /*inserire bottone prenota*/
         if(count != 0){
@@ -30,10 +27,8 @@ for (var j = 0; j < 10; j++) {
     else {
       this.style.backgroundColor = "lightgreen";
       count = count -1;
-      posti_free = posti_free + 1;
       document.getElementById("selezionati").innerHTML = count;
-      document.getElementById("free").innerHTML = posti_free;
-      
+
       /*eliminare bottone prenota*/
       if(count == 0){
       document.getElementById("bottone").style.display = "none";

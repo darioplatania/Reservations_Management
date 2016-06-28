@@ -1,4 +1,6 @@
 <?php
+include('prenota.php');
+
 session_start();
 $email = $_SESSION['email'];
 
@@ -8,6 +10,7 @@ if(!isset($_SESSION['email']))
     header("Location: ../index.php");//redirect to index page
 }
 ?>
+
 
 <html lang="en">
 
@@ -48,7 +51,7 @@ if(!isset($_SESSION['email']))
             </li>
             </li>
             <li>
-                <a href="logout.php" onclick="return deleteask();">Sign Out</a>                
+                <a href="logout.php" onclick="return deleteask();">Sign Out</a>
             </li>
         </ul>
     </div>
@@ -78,8 +81,8 @@ if(!isset($_SESSION['email']))
                   </thead>
                   <tbody>
                     <tr>
-                      <td>..</td>
-                      <td>..</td>
+                      <td><b><?php echo $count;?><b></td>
+                      <td><b><?php echo $free;?><b></td>
                       <td><b id= "prenotati"></b></td>
                     </tr>
                   </tbody>
