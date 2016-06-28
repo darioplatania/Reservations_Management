@@ -12,38 +12,13 @@ if ($db->connect_error) {
 }
 
 // define variables and set to empty values
-$nomeErr = $cognomeErr = $emailErr = $passwordErr = "";
-$nome = $cognome = $email = $password = "";
+$emailErr = $passwordErr = "";
+$email = $password = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $valid = true;
 
-  /*controllo nome*/
-  if (empty($_POST["nome"])) {
-    $nomeErr = "Inserirsci il Nome";
-    $valid = false;
-  } else {
-    $nome = test_input($_POST["nome"]);
-    // check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Z ]*$/",$nome)) {
-      $nomeErr = "Solo lettere o spazi bianchi";
-      $valid = false;
 
-    }
-  }
-
-  /*controllo cognome*/
-  if (empty($_POST["cognome"])) {
-    $cognomeErr = "Inserisci il Cognome";
-    $valid = false;
-  } else {
-    $cognome = test_input($_POST["cognome"]);
-    // check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Z ]*$/",$cognome)) {
-      $cognomeErr = "Solo lettere o spazi bianchi";
-      $valid = false;
-    }
-  }
 
   /*controllo email*/
   if (empty($_POST["email"])) {
@@ -78,7 +53,7 @@ function test_input($data) {
 //if valid then redirect
   if($valid)
   {
-    $sql = "INSERT INTO users (nome, cognome, email, password) VALUES ('$nome', '$cognome', '$email', '$password')";
+    $sql = "INSERT INTO users (email, password) VALUES ('$email', '$password')";
     if(mysqli_query($db, $sql))
      {
         $success = "Registrazione avvenuta con successo";
@@ -136,16 +111,6 @@ function test_input($data) {
               <div class="row">
                 <div class="col-lg-12">
                   <form id="login-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" role="form" style="display: block;">
-                    <div class="form-group">
-                      <input type="text" name="nome" id="nome" tabindex="1" class="form-control" placeholder="Nome">
-                      <?php echo "<p class='text-danger'>$nomeErr</p>";?>
-
-                    </div>
-                    <div class="form-group">
-                      <input type="text" name="cognome" id="cognome" tabindex="2" class="form-control" placeholder="Cognome">
-                      <?php echo "<p class='text-danger'>$cognomeErr</p>";?>
-
-                    </div>
                     <div class="form-group">
                       <input type="email" name="email" id="email" tabindex="3" class="form-control" placeholder="Email">
                       <?php echo "<p class='text-danger'>$emailErr</p>";?>
