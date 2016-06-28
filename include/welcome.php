@@ -84,6 +84,9 @@ if(!isset($_SESSION['email']))
                 </div>
               </div>
             </div><!-- End of Row Panel-->
+            <div>
+              <button id="bottone" class="btn btn-default btn-sm" role="button">Prenota</button>
+            </div>
             <p style="text-align:center"><b>Legenda</b></p>
             <div class="btn-group btn-group-justified" role="group" aria-label="...">
               <div class="btn-group" role="group">
