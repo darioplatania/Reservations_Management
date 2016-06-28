@@ -1,5 +1,6 @@
 <?php
 session_start();
+$email = $_SESSION['email'];
 
 if(!isset($_SESSION['email']))
 {
@@ -83,6 +84,19 @@ if(!isset($_SESSION['email']))
                 </div>
               </div>
             </div><!-- End of Row Panel-->
+            <p style="text-align:center"><b>Legenda</b></p>
+            <div class="btn-group btn-group-justified" role="group" aria-label="...">
+              <div class="btn-group" role="group">
+                <button type="button" class="btn btn-danger">Occupati</button>
+              </div>
+              <div class="btn-group" role="group">
+                <button type="button" class="btn btn-success">Liberi</button>
+              </div>
+              <div class="btn-group" role="group">
+                <button type="button" class="btn btn-warning">I tuoi posti</button>
+              </div>
+            </div>
+            <br>
             <table id="tb" class="table table-bordered" style="background-color: #80FF80"></table>
               <script src="../js/table_welcome.js"></script>
           </div>
