@@ -18,6 +18,7 @@ for (var j = 0; j < 10; j++) {
         this.style.backgroundColor = "khaki ";
         count = count +1;
         document.getElementById("selezionati").innerHTML = count;
+        /*inserire bottone prenota*/
         if(count != 0){
         document.getElementById("bottone").style.display = "block";
       }
@@ -26,6 +27,7 @@ for (var j = 0; j < 10; j++) {
       this.style.backgroundColor = "lightgreen";
       count = count -1;
       document.getElementById("selezionati").innerHTML = count;
+      /*eliminare bottone prenota*/
       if(count == 0){
       document.getElementById("bottone").style.display = "none";
       }
