@@ -1,7 +1,7 @@
 <?php
    session_start();
    /*se cerco tramite url questa pagina mi rimanda alla index*/
-   if($_SESSION['email'])
+   if(isset($_SESSION['email']))
    {
        header('Location: ../index.php');
    }
