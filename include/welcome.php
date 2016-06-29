@@ -1,7 +1,6 @@
 <?php
 session_start();
 $email = $_SESSION['email'];
-
 include('conteggio.php');
 
 if(!isset($_SESSION['email']))
@@ -10,30 +9,36 @@ if(!isset($_SESSION['email']))
     header("Location: ../index.php");//redirect to index page
 }
 ?>
+
+<!--INIZIO FUNZIONE CONTROLLO REFRESH-->
 <?php
 include('config.php');
 
-for ($i=0; $i<50; $i++){
-              $cookie_name = 'cookie' . ($i);
-              if (isset($_COOKIE[$cookie_name])){
-              $posto = $_COOKIE[$cookie_name];
-              $sql = "INSERT INTO prenotazioni (utente, posto) VALUES ('$email', '$posto')";
+$RequestSignature = md5($_SERVER['REQUEST_URI'].$_SERVER['QUERY_STRING'].print_r($_POST, true));
 
-              if(mysqli_query($db, $sql))
-               {
-                  $success = "Posto assegnato con successo!";
-               }
-              else
-               {
-                 $danger = "C'è stato un problema..il posto non è stato prenotato!";
-               }
-              }
-            }
-            // close connection
-            //mysqli_close($db);
+/*controllo se ho fatto l'accesso per la prima volta o è un refresh page*/
+if (!$_SESSION['LastRequest'] == $RequestSignature)
+{
+  $_SESSION['LastRequest'] = $RequestSignature;
+  for ($i=0; $i<50; $i++){
+      $cookie_name = 'cookie' . ($i);
+      if (isset($_COOKIE[$cookie_name])){
+      $posto = $_COOKIE[$cookie_name];
+      $sql = "INSERT INTO prenotazioni (utente, posto) VALUES ('$email', '$posto')";
 
+      if(mysqli_query($db, $sql))
+       {
+          $success = "Posto assegnato con successo!";
+       }
+      else
+       {
+         $danger = "C'è stato un problema..il posto non è stato prenotato!";
+       }
+      }
+    }
+}
 ?>
-
+<!--FINE FUNZIONE CONTROLLO REFRESH-->
 
 <html lang="en">
 
@@ -63,13 +68,6 @@ for ($i=0; $i<50; $i++){
 
 <body>
 
-
-  <script>
-  function myFunction() {
-      location.reload();
-  }
-  </script>
-  
 <div id="wrapper">
 
     <!-- Sidebar -->
@@ -126,7 +124,7 @@ for ($i=0; $i<50; $i++){
               </div>
             </div><!-- End of Row Panel-->
             <div>
-              <button id="bottone" class="btn btn-default btn-sm" role="button" onclick="myFunction()">Prenota</button>
+              <button id="bottone" class="btn btn-default btn-sm" role="button" onclick="window.location.href = 'prenota.php'">Prenota</button>
             </div>
             <p style="text-align:center"><b>Legenda</b></p>
             <div class="btn-group btn-group-justified" role="group" aria-label="...">
@@ -150,6 +148,30 @@ for ($i=0; $i<50; $i++){
     <!-- /#page-content-wrapper -->
 </div>
 <!-- /#wrapper -->
+
+<!-- INIZIO FUNZIONE COLORA -->
+<?php
+
+$sql = "SELECT * FROM prenotazioni";
+$result = mysqli_query($db,$sql);
+while ($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+
+      $utente = $row['utente'];
+
+      if(isset($_SESSION['email'])){
+        /*se l'utente corrente ha prenotato i posti li colora di arancione*/
+        if($utente == $_SESSION['email']){
+          echo "<script>document.getElementById($row[posto]).style.backgroundColor = 'GoldenRod '</script>";
+        }
+        else{
+          /*altrimenti di rosso*/
+          echo "<script>document.getElementById($row[posto]).style.backgroundColor = 'IndianRed'</script>";
+        }
+      }
+
+}
+?>
+<!-- FINE FUNZIONE COLORA -->
 
 <!-- jQuery -->
 <script src="../js/jquery.js"></script>

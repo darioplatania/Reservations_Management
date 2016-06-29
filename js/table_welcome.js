@@ -49,7 +49,7 @@ for (var j = 0; j < 10; j++) {
             array_coo[pos] = coo;
             //alert(coo);
             //m++;
-        } else {
+        } else if(this.style.backgroundColor == "khaki") {
           this.style.backgroundColor = "lightgreen";
           pulsante = pulsante -1;
           document.getElementById("selezionati").innerHTML = pulsante;
@@ -63,6 +63,9 @@ for (var j = 0; j < 10; j++) {
           eraseCookie(c);
           count--;
           }
+        else {
+          document.getElementById('1').disabled = true;
+        }
       };
 }
 }

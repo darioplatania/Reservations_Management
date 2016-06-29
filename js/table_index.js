@@ -1,4 +1,4 @@
-var m=0;
+var m = 0;
 var count = 0;
 var pulsante = 0;
 
@@ -24,7 +24,7 @@ for (var j = 0; j < 10; j++) {
   cell[i].id = m;
   cell[i].style.backgroundColor = "lightgreen";
   document.getElementById("bottone").style.display = "none"; //di default il bottone non viene visto se non vi sono prenotazioni selezionate
-  document.getElementById("errore").style.display = "none"; 
+  document.getElementById("errore").style.display = "none";
 
   /*FUNZIONE PER SELEZIONE E CONTEGGIO POSTI + COLORE*/
   cell[i].onclick=function(){
@@ -49,7 +49,7 @@ for (var j = 0; j < 10; j++) {
             array_coo[pos] = coo;
             //alert(coo);
             //m++;
-        } else {
+        } else if(this.style.backgroundColor == "khaki") {
           this.style.backgroundColor = "lightgreen";
           pulsante = pulsante -1;
           document.getElementById("selezionati").innerHTML = pulsante;
@@ -63,6 +63,11 @@ for (var j = 0; j < 10; j++) {
           eraseCookie(c);
           count--;
           }
+        else {
+          document.getElementById('1').disabled = true;
+
+        }
+
       };
 }
 }

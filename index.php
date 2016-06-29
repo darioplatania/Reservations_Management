@@ -111,9 +111,6 @@ if(isset($_SESSION['email']))
             <div class="btn-group" role="group">
               <button type="button" class="btn btn-success">Liberi</button>
             </div>
-            <div class="btn-group" role="group">
-              <button type="button" class="btn btn-warning">I tuoi posti</button>
-            </div>
           </div>
           <br>
           <table id="tb" class="table table-bordered" style="background-color: #80FF80"></table>
@@ -125,6 +122,21 @@ if(isset($_SESSION['email']))
   <!-- /#page-content-wrapper -->
 </div>
 <!-- /#wrapper -->
+
+<!-- INIZIO FUNZIONE COLORA -->
+<?php
+$sql = "SELECT * FROM prenotazioni";
+$result = mysqli_query($db,$sql);
+while ($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+     
+      $utente = $row['utente'];
+          echo "<script>
+                 document.getElementById($row[posto]).disabled = true;
+                 document.getElementById($row[posto]).style.backgroundColor = 'IndianRed';
+                </script>";
+}
+?>
+<!-- FINE FUNZIONE COLORA -->
 
 <!-- jQuery -->
 <script src="js/jquery.js"></script>
