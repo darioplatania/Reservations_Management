@@ -63,18 +63,13 @@ for ($i=0; $i<50; $i++){
 
 <body>
 
-<script>
-  for (var i=0; i<50; i++){
-    var coo = 'cookie' + (i+1).toString();
-    var a = readCookie(coo);
-    /*inizio prova stampa cookie*/
-    //if (a!=null) {
-    //document.write(a);
-    //}
-    /*fine prova stampa cookie*/
-  }
-</script>
 
+  <script>
+  function myFunction() {
+      location.reload();
+  }
+  </script>
+  
 <div id="wrapper">
 
     <!-- Sidebar -->
@@ -123,7 +118,7 @@ for ($i=0; $i<50; $i++){
                     <tr>
                       <td><b><?php echo $count;?><b></td>
                       <td><b><?php echo $free;?><b></td>
-                      <td><b id= "prenotati"></b></td>
+                      <td><b id= "selezionati"></b></td>
                     </tr>
                   </tbody>
                  </table>
@@ -131,7 +126,7 @@ for ($i=0; $i<50; $i++){
               </div>
             </div><!-- End of Row Panel-->
             <div>
-              <button id="bottone" class="btn btn-default btn-sm" role="button">Prenota</button>
+              <button id="bottone" class="btn btn-default btn-sm" role="button" onclick="myFunction()">Prenota</button>
             </div>
             <p style="text-align:center"><b>Legenda</b></p>
             <div class="btn-group btn-group-justified" role="group" aria-label="...">
