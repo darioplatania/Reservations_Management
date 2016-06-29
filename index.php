@@ -30,6 +30,9 @@ if(isset($_SESSION['email']))
   <!-- Custom CSS -->
   <link href="css/simple-sidebar.css" rel="stylesheet">
 
+  <!-- Cookie.js -->
+  <script src="js/cookie.js"></script>
+
 </head>
 
 <body>
@@ -87,7 +90,7 @@ if(isset($_SESSION['email']))
                 </thead>
                 <tbody>
                   <tr>
-                    <td><b><?php echo $count;?><b></td>
+                    <td><b><?php echo $occupati;?><b></td>
                     <td><b><?php echo $free;?><b></td>
                     <td><b id="selezionati"></b></td>
                   </tr>

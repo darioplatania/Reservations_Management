@@ -33,9 +33,24 @@ if(!isset($_SESSION['email']))
   <!-- Logout.js -->
   <script src="../js/logout.js"></script>
 
+  <!-- Cookie.js -->
+  <script src="../js/cookie.js"></script>
+
 </head>
 
 <body>
+
+<script>
+  for (var i=0; i<50; i++){
+    var coo = 'cookie' + (i+1).toString();
+    var a = readCookie(coo);
+    /*inizio prova stampa cookie*/
+    //if (a!=null) {
+    //document.write(a);
+    //}
+    /*fine prova stampa cookie*/
+  }
+</script>
 
 <div id="wrapper">
 
