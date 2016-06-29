@@ -1,14 +1,37 @@
 <?php
-include('conteggio.php');
-
 session_start();
 $email = $_SESSION['email'];
+
+include('conteggio.php');
 
 if(!isset($_SESSION['email']))
 {
 
     header("Location: ../index.php");//redirect to index page
 }
+?>
+<?php
+include('config.php');
+
+for ($i=0; $i<50; $i++){
+              $cookie_name = 'cookie' . ($i);
+              if (isset($_COOKIE[$cookie_name])){
+              $posto = $_COOKIE[$cookie_name];
+              $sql = "INSERT INTO prenotazioni (utente, posto) VALUES ('$email', '$posto')";
+
+              if(mysqli_query($db, $sql))
+               {
+                  $success = "Posto assegnato con successo!";
+               }
+              else
+               {
+                 $danger = "C'è stato un problema..il posto non è stato prenotato!";
+               }
+              }
+            }
+            // close connection
+            //mysqli_close($db);
+
 ?>
 
 
@@ -77,6 +100,8 @@ if(!isset($_SESSION['email']))
       <div class="container-fluid">
         <h1 style="text-align:center">La nostra Sala</h1>
         <p style="text-align:center">Prenota ora i tuoi posti a sedere!</p>
+        <?php echo "<p class='text-success'>$success</p>";?>
+        <?php echo "<p class='text-danger'>$danger</p>";?>
         <div class="row">
           <div class="col-md-6 col-md-offset-0">
             <br>
