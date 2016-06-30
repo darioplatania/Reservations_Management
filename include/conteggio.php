@@ -1,5 +1,4 @@
 <?php
-include('config.php');
 
 $sql = "SELECT * FROM prenotazioni";
 $result = mysqli_query($db,$sql);
@@ -10,10 +9,10 @@ $count = mysqli_num_rows($result);
 
 if($count != 0){
   $occupati = $count;
-  $free = 50 - $occupati;
+  $free = $dimensione - $occupati;
 }
 else{
   $occupati = 0;
-  $free = 50;  
+  $free = $dimensione;
 }
 ?>

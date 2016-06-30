@@ -1,4 +1,5 @@
 <?php
+include('include/config.php');
 include('include/conteggio.php');
 
 session_start();
@@ -32,6 +33,7 @@ if(isset($_SESSION['email']))
 
   <!-- Cookie.js -->
   <script src="js/cookie.js"></script>
+  <script src="js/enable_cookie.js"></script>
 
   <!-- jQuery -->
   <script src="js/jquery.js"></script>
@@ -42,6 +44,7 @@ if(isset($_SESSION['email']))
 </head>
 
 <body>
+
 <div id="wrapper">
 
   <!-- Sidebar -->
@@ -63,7 +66,7 @@ if(isset($_SESSION['email']))
   <!-- /#sidebar-wrapper -->
 
   <!-- Page Content -->
-
+  <!-- Show a message -->
   <div id="page-content-wrapper">
     <div class="container-fluid">
       <h1 style="text-align:center">La nostra Sala</h1>
@@ -71,20 +74,21 @@ if(isset($_SESSION['email']))
       <div class="row">
         <div class="col-md-6 col-md-offset-0">
           <br>
+          <!--
           <strong id="errore" name="redirect" class="alert alert-danger">
              Occore essere registrati!<br>Verrai reindirizzato a breve!
-             <!--
              <form name="redirect">
              Verrai reindirizzato tra <input type="text" size="2" name="counter">secondi
              </form>
-           -->
-          </strong>
 
+          </strong>
+        -->
+          <noscript> <p class="text-danger"> Attenzione! Non hai javascript abilitato e il sito potrebbe non funzionare correttamente!<p></noscript>
           <div class="row"><!--Start Row Panel-->
             <div class="col-md-12 col-md-offset-0">
               <div class="panel panel-default">
                 <div class="panel-heading">
-                     <h3 class="panel-title">Posti Totali: <b>50</b></h3>
+                     <h3 class="panel-title">Posti Totali: <b><?php echo $dimensione ?></b></h3>
                 </div>
                 <table class="table">
                 <thead>
@@ -120,6 +124,10 @@ if(isset($_SESSION['email']))
           </div>
           <br>
           <table id="tb" class="table table-bordered" style="background-color: #80FF80"></table>
+            <script>
+            var righe = <?php echo $righe ?>;
+            var colonne = <?php echo $colonne ?>;
+            </script>
             <script src="js/table_index.js"></script>
         </div>
       </div>

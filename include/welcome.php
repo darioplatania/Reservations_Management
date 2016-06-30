@@ -1,6 +1,7 @@
 <?php
 session_start();
 $email = $_SESSION['email'];
+include('config.php');
 include('conteggio.php');
 
 if(!isset($_SESSION['email']))
@@ -90,7 +91,7 @@ include('refresh.php');
               <div class="col-md-12 col-md-offset-0">
                 <div class="panel panel-default">
                   <div class="panel-heading">
-                       <h3 class="panel-title">Posti Totali: <b>50</b></h3>
+                       <h3 class="panel-title">Posti Totali: <b><?php echo $dimensione ?></b></h3>
                   </div>
                   <table class="table">
                   <thead>
@@ -128,6 +129,10 @@ include('refresh.php');
             </div>
             <br>
             <table id="tb" class="table table-bordered" style="background-color: #80FF80"></table>
+              <script>
+              var righe = <?php echo $righe ?>;
+              var colonne = <?php echo $colonne ?>;
+              </script>
               <script src="../js/table_welcome.js"></script>
           </div>
         </div>
