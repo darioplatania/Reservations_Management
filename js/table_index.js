@@ -2,7 +2,7 @@ var m = 0;
 var count = 0;
 var pulsante = 0;
 
-/*FUNZIONE PULIZIA COOKIE*/
+/*INIZIO FUNZIONE PULIZIA COOKIE*/
 for (var t=0; t<50; t++){
   var coo = 'cookie' + (t+1).toString();
   var a = readCookie(coo);
@@ -10,6 +10,7 @@ for (var t=0; t<50; t++){
     eraseCookie(coo);
   }
 }
+/*FINE FUNZIONE PULIZIA COOKIE*/
 
 for (var j = 0; j < 10; j++) {
   var table = document.getElementById("tb");
