@@ -33,6 +33,12 @@ if(isset($_SESSION['email']))
   <!-- Cookie.js -->
   <script src="js/cookie.js"></script>
 
+  <!-- jQuery -->
+  <script src="js/jquery.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
@@ -128,7 +134,7 @@ if(isset($_SESSION['email']))
 $sql = "SELECT * FROM prenotazioni";
 $result = mysqli_query($db,$sql);
 while ($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
-     
+
       $utente = $row['utente'];
           echo "<script>
                  document.getElementById($row[posto]).disabled = true;
@@ -137,20 +143,6 @@ while ($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
 }
 ?>
 <!-- FINE FUNZIONE COLORA -->
-
-<!-- jQuery -->
-<script src="js/jquery.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
-
-<!-- Menu Toggle Script -->
-<script>
-$("#menu-toggle").click(function(e) {
-    e.preventDefault();
-    $("#wrapper").toggleClass("toggled");
-});
-</script>
 </body>
 
 </html>
