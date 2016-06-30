@@ -10,35 +10,9 @@ if(!isset($_SESSION['email']))
 }
 ?>
 
-<!--INIZIO FUNZIONE CONTROLLO REFRESH-->
 <?php
-include('config.php');
-
-$RequestSignature = md5($_SERVER['REQUEST_URI'].$_SERVER['QUERY_STRING'].print_r($_POST, true));
-
-/*controllo se ho fatto l'accesso per la prima volta o è un refresh page*/
-if (!$_SESSION['LastRequest'] == $RequestSignature)
-{
-  $_SESSION['LastRequest'] = $RequestSignature;
-  for ($i=0; $i<50; $i++){
-      $cookie_name = 'cookie' . ($i);
-      if (isset($_COOKIE[$cookie_name])){
-      $posto = $_COOKIE[$cookie_name];
-      $sql = "INSERT INTO prenotazioni (utente, posto) VALUES ('$email', '$posto')";
-
-      if(mysqli_query($db, $sql))
-       {
-          $success = "Posto assegnato con successo!";
-       }
-      else
-       {
-         $danger = "C'è stato un problema..il posto non è stato prenotato!";
-       }
-      }
-    }
-}
+include('refresh.php');
 ?>
-<!--FINE FUNZIONE CONTROLLO REFRESH-->
 
 <html lang="en">
 
@@ -63,6 +37,12 @@ if (!$_SESSION['LastRequest'] == $RequestSignature)
 
   <!-- Cookie.js -->
   <script src="../js/cookie.js"></script>
+
+  <!-- jQuery -->
+  <script src="../js/jquery.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="../js/bootstrap.min.js"></script>
 
 </head>
 
@@ -149,42 +129,18 @@ if (!$_SESSION['LastRequest'] == $RequestSignature)
 </div>
 <!-- /#wrapper -->
 
-<!-- INIZIO FUNZIONE COLORA -->
 <?php
-
-$sql = "SELECT * FROM prenotazioni";
-$result = mysqli_query($db,$sql);
-while ($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
-
-      $utente = $row['utente'];
-
-      if(isset($_SESSION['email'])){
-        /*se l'utente corrente ha prenotato i posti li colora di arancione*/
-        if($utente == $_SESSION['email']){
-          echo "<script>document.getElementById($row[posto]).style.backgroundColor = 'GoldenRod '</script>";
-        }
-        else{
-          /*altrimenti di rosso*/
-          echo "<script>document.getElementById($row[posto]).style.backgroundColor = 'IndianRed'</script>";
-        }
-      }
-
-}
+include('colora.php');
 ?>
-<!-- FINE FUNZIONE COLORA -->
 
-<!-- jQuery -->
-<script src="../js/jquery.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="../js/bootstrap.min.js"></script>
-
-<!-- Menu Toggle Script -->
-<script>
-$("#menu-toggle").click(function(e) {
-    e.preventDefault();
-    $("#wrapper").toggleClass("toggled");
-});
+<script type="text/javascript">
+function delete_id(id)
+{
+ if(confirm('Sei sicuro di voler eliminare la prenotazione?'))
+ {
+  window.location.href='../include/delete?delete_id='+id;
+ }
+}
 </script>
 
 </body>
