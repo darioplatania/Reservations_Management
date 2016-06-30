@@ -84,6 +84,11 @@ include('refresh.php');
         <p style="text-align:center">Prenota ora i tuoi posti a sedere!</p>
         <?php echo "<p class='text-success'>$success</p>";?>
         <?php echo "<p class='text-danger'>$danger</p>";?>
+        <!--INIZIO INSERIMENTO TESTO PER INSERT OR DELETE QUERY-->
+        <p class='text-success' id="insert">Inserita</p>
+        <p class='text-danger' id="delete">Eliminata</p>
+        <!--FINE INSERIMENTO TESTO PER INSERT OR DELETE QUERY-->
+
         <div class="row">
           <div class="col-md-6 col-md-offset-0">
             <br>

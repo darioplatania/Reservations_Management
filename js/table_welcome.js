@@ -26,7 +26,10 @@ for (var j = 0; j < righe; j++) {
   cell[i].id = m;
   cell[i].style.backgroundColor = "lightgreen";
   document.getElementById("bottone").style.display = "none"; //di default il bottone non viene visto se non vi sono prenotazioni selezionate
-  //document.getElementById("errore").style.display = "none"; //di default il bottone non viene visto se non vi sono prenotazioni selezionate
+  
+  /*setting testo per inserimento or delete prenotazione*/
+  document.getElementById("insert").style.display = "none"; //di default il bottone non viene visto se non vi sono prenotazioni selezionate
+  document.getElementById("delete").style.display = "none"; //di default il bottone non viene visto se non vi sono prenotazioni selezionate
 
   /*FUNZIONE PER SELEZIONE E CONTEGGIO POSTI + COLORE*/
   cell[i].onclick=function(){
