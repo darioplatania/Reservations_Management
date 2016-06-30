@@ -5,8 +5,7 @@ include('conteggio.php');
 
 if(!isset($_SESSION['email']))
 {
-
-
+  header("Location: ../index.php");//redirect to index page
 }
 /*funzione per inattività dopo 2 minuti*/
 $now = time();
