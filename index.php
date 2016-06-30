@@ -1,5 +1,6 @@
 <?php
 include('include/config.php');
+include('include/variable.php');
 include('include/conteggio.php');
 
 session_start();

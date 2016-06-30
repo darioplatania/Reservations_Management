@@ -2,6 +2,7 @@
 session_start();
 $email = $_SESSION['email'];
 include('config.php');
+include('variable.php');
 include('conteggio.php');
 
 if(!isset($_SESSION['email']))

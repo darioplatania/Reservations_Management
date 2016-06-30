@@ -3,9 +3,5 @@
    define('DB_USERNAME', 'root');
    define('DB_PASSWORD', 'california');
    define('DB_DATABASE', 'theater_show');
-   $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
-
-   $righe = 10;
-   $colonne = 5;
-   $dimensione = $righe * $colonne;
+   $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);  
 ?>

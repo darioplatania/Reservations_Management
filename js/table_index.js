@@ -75,7 +75,7 @@ for (var j = 0; j < righe; j++) {
 /*FUNZIONE ERRORE SE NON SI E' LOGGATI*/
 str = document.getElementById("bottone");
 str.onclick=function(){
-document.getElementById("errore").style.display = "block";
+//document.getElementById("errore").style.display = "block";
 
 // Imposto il sito di destinazione
 var destinazione = "include/signup.php";
