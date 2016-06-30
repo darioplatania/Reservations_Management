@@ -64,7 +64,7 @@ for (var j = 0; j < 10; j++) {
           count--;
           }
         else {
-          document.getElementById('1').disabled = true;
+          document.getElementById().disabled = true;
 
         }
 
