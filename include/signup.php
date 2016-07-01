@@ -17,7 +17,7 @@ $email = $password = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $valid = true;
-  
+
   /*controllo email*/
   if (empty($_POST["email"])) {
     $emailErr = "Inserirsci l'Email";
@@ -79,6 +79,9 @@ function test_input($data) {
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <!-- Latest compiled JavaScript -->
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <!--Enable Cookie-->
+  <script src="../js/enable_cookie2.js"></script>
 
   <title>Theater Show Management</title>
 </head>

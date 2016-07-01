@@ -22,6 +22,9 @@
   <!-- Jquery -->
   <link href="../js/jquery.js" rel="stylesheet">
 
+  <!--Enable Cookie-->
+  <script src="../js/enable_cookie2.js"></script>
+
   <title>Theater Show Management</title>
 </head>
 <body>
