@@ -151,7 +151,7 @@ function delete_id(id)
 {
  if(confirm('Sei sicuro di voler eliminare la prenotazione?'))
  {
-  window.location.href='../include/delete?delete_id='+id;
+  window.location.href='delete?delete_id='+id;
  }
 }
 </script>
