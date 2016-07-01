@@ -60,7 +60,7 @@ if(isset($_SESSION['email']))
               <a href="include/signup.php">Registrazione</a>
           </li>
           <li>
-              <a href="include/signin.php">Accedi</a>
+              <a href="include/signin.php" id="accedi">Accedi</a>
           </li>
       </ul>
   </div>

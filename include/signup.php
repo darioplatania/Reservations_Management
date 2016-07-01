@@ -99,6 +99,12 @@ function test_input($data) {
               <hr>
               <div class="row">
                 <div class="col-xs-8">
+                  <p class="active" id="login-form-link">Se non sei registrato procedi con la Registrazione altrimenti clicca su Accedi!</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-xs-8">
                   <p class="active" id="login-form-link">Registrati</p>
                 </div>
               </div>

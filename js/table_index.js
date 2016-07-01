@@ -41,6 +41,7 @@ for (var j = 0; j < righe; j++) {
             /*inserire bottone prenota*/
             if(pulsante != 0){
             document.getElementById("bottone").style.display = "block";
+            document.getElementById("accedi").style.display = "none";
             }
 
             /*cookie*/
@@ -58,6 +59,7 @@ for (var j = 0; j < righe; j++) {
           /*eliminare bottone prenota*/
           if(pulsante == 0){
           document.getElementById("bottone").style.display = "none";
+          document.getElementById("accedi").style.display = "block";
           }
           /*cookie*/
           var c = array_coo[pos];
