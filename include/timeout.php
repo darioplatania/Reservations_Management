@@ -11,7 +11,7 @@ function control_time() {
     {
       $new=true;
     }
-  if ($new || ($diff > 10))
+  if ($new || ($diff > 120))
     {  // new or with inactivity period too long
       //session_unset(); // Deprecated
       $_SESSION=array();
