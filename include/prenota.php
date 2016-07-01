@@ -1,9 +1,10 @@
 <?php
 include('config.php');
+include('variable.php');
 session_start();
 $email = $_SESSION['email'];
 
-for ($i=0; $i<50; $i++){
+for ($i=1; $i<=$dimensione; $i++){
     $cookie_name = 'cookie' . ($i);
     if (isset($_COOKIE[$cookie_name])){
     $posto = $_COOKIE[$cookie_name];
