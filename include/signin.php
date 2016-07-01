@@ -101,6 +101,7 @@
       // If result matched $email and $password, table row must be 1 row
       if($count == 1) {
         $_SESSION['email']=$email;//here session is used and value of $email store in $_SESSION.
+        $_SESSION['time']=time();
          header("location: ../index.php");
       }else {
          $error = "Si prega di inserire Email e Password";

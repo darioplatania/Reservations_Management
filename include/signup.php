@@ -1,14 +1,11 @@
 <?php
 session_start();
+include ('config.php');
+
 /*se cerco tramite url questa pagina mi rimanda alla index*/
 if(isset($_SESSION['email']))
 {
     header('Location: ../index.php');
-}
-
-include ('config.php');
-if ($db->connect_error) {
-    die("Connection failed: " . $db->connect_error);
 }
 
 // define variables and set to empty values

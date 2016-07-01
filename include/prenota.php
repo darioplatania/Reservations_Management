@@ -1,7 +1,10 @@
 <?php
+session_start();
 include('config.php');
 include('variable.php');
-session_start();
+include('timeout.php');
+control_time();
+
 $email = $_SESSION['email'];
 
 for ($i=1; $i<=$dimensione; $i++){

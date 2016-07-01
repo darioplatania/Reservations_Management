@@ -1,23 +1,17 @@
 <?php
 session_start();
-$email = $_SESSION['email'];
+include('timeout.php');
+control_time();
 include('config.php');
 include('variable.php');
 include('conteggio.php');
+
+$email = $_SESSION['email'];
 
 if(!isset($_SESSION['email']))
 {
   header("Location: ../index.php");//redirect to index page
 }
-/*funzione per inattività dopo 2 minuti*/
-$now = time();
-if (isset($_SESSION['discard_after']) && $now > $_SESSION['discard_after']) {
-    // this session has worn out its welcome; kill it and start a brand new one
-    session_unset();
-    session_destroy();
-    header("Location: ../index.php");//redirect to index page
-}
-$_SESSION['discard_after'] = $now + 120;
 ?>
 
 <?php

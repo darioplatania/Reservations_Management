@@ -84,7 +84,7 @@ if(isset($_SESSION['email']))
 
           </strong>
         -->
-          <noscript> <p class="text-danger"> Attenzione! Non hai javascript abilitato e il sito potrebbe non funzionare correttamente!<p></noscript>
+          <noscript> Attenzione! Non hai javascript abilitato e il sito potrebbe non funzionare correttamente! </noscript>
           <div class="row"><!--Start Row Panel-->
             <div class="col-md-12 col-md-offset-0">
               <div class="panel panel-default">
