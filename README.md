@@ -11,5 +11,3 @@ The project was created during the course of distributed programming 1
 ## Installation
 
 For use it is necessary **PHP** >= 5.3.0,**mysql**,**Apache2** or **Nginx**
-
-## Contributors
