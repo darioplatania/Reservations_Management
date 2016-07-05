@@ -19,8 +19,7 @@ for (var j = 0; j < righe; j++) {
   var array_coo = new Array();
   for (var i = 0; i < colonne; i++) {
   cell[i] = row.insertCell(i);
-  cell[i].innerHTML = String.fromCharCode(j+65) + (i+1);
-  //cell[i].id = (j+1).toString() + (i+1).toString();
+  cell[i].innerHTML = String.fromCharCode(j+65) + (i+1);  
   m++;
   cell[i].id = m;
   cell[i].style.backgroundColor = "lightgreen";
@@ -29,9 +28,9 @@ for (var j = 0; j < righe; j++) {
 
   /*FUNZIONE PER SELEZIONE E CONTEGGIO POSTI + COLORE*/
   cell[i].onclick=function(){
-          //document.getElementById("t01").rows.this;
+
           var pos = this.id;
-          //alert(pos);
+
           if (this.style.backgroundColor == "lightgreen"){
               this.style.backgroundColor = "khaki";
             count = count + 1;;
@@ -46,11 +45,8 @@ for (var j = 0; j < righe; j++) {
 
             /*cookie*/
             var coo = 'cookie' + pos.toString();
-            //alert(coo);
             createCookie(coo, pos, 5);
             array_coo[pos] = coo;
-            //alert(coo);
-            //m++;
         } else if(this.style.backgroundColor == "khaki") {
           this.style.backgroundColor = "lightgreen";
           pulsante = pulsante -1;

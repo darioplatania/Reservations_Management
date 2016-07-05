@@ -74,16 +74,7 @@ if(isset($_SESSION['email']))
       <p style="text-align:center">Prenota ora i tuoi posti a sedere!</p>
       <div class="row">
         <div class="col-md-6 col-md-offset-0">
-          <br>
-          <!--
-          <strong id="errore" name="redirect" class="alert alert-danger">
-             Occore essere registrati!<br>Verrai reindirizzato a breve!
-             <form name="redirect">
-             Verrai reindirizzato tra <input type="text" size="2" name="counter">secondi
-             </form>
-
-          </strong>
-        -->
+          <br>          
           <noscript> Attenzione! Non hai javascript abilitato e il sito potrebbe non funzionare correttamente! </noscript>
           <div class="row"><!--Start Row Panel-->
             <div class="col-md-12 col-md-offset-0">

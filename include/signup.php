@@ -52,7 +52,6 @@ function test_input($data) {
     if(mysqli_query($db, $sql))
      {
         $success = "Registrazione avvenuta con successo";
-        //header("refresh:5;location: signin.php");
         echo "<script>window.open('signin.php','_self')</script>";
      }
     else
@@ -61,11 +60,7 @@ function test_input($data) {
      }
      // close connection
      mysqli_close($db);
-  }
-  //else
-  //{
-    //echo "no";
-  //}
+  }  
 ?>
 
 <html>

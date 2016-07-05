@@ -12,8 +12,7 @@ function control_time() {
       $new=true;
     }
   if ($new || ($diff > 120))
-    {  // new or with inactivity period too long
-      //session_unset(); // Deprecated
+    {  // new or with inactivity period too long    
       $_SESSION=array();
       // If it's desired to kill the session, also delete the session cookie.
       // Note: This will destroy the session, and not just the session data!
@@ -31,8 +30,6 @@ function control_time() {
   else
     {
       $_SESSION['time']=time(); /* update time */
-      //echo '<html><body>Tempo ultimo accesso aggiornato: '
-      //.$_SESSION['time'].'</body></html>';
     }
 }
 ?>

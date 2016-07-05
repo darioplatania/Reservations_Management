@@ -23,7 +23,5 @@ for ($i=1; $i<=$dimensione; $i++){
      }
     }
   }
-  header('Location: welcome.php');
-  // close connection
-  //mysqli_close($db);
+  header('Location: welcome.php');  
 ?>
